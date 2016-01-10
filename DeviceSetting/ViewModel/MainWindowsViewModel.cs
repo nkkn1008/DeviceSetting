@@ -9,11 +9,11 @@ using DeviceSetting.Model;
 
 namespace DeviceSetting.ViewModel
 {
-    class PrinterViewModel : INotifyPropertyChanged
+    class MainWindowsViewModel : INotifyPropertyChanged
     {
         private Printer printer;
         private ObservableCollection<string> printers;
-        public PrinterViewModel()
+        public MainWindowsViewModel()
         {
             this.printer = new Printer();
             this.printers = printer.printers;

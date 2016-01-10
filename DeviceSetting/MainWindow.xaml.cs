@@ -23,7 +23,7 @@ namespace DeviceSetting
         public MainWindow()
         {
             InitializeComponent();
-            var p = new PrinterViewModel();
+            var p = new MainWindowsViewModel();
             this.DataContext = p;
         }
     }
