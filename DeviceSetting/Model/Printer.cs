@@ -17,7 +17,7 @@ namespace DeviceSetting.Model
                 Select(x => x.FullName).
                 ToList();
             printers = new ObservableCollection<string>(queList);
-                                
+            PrinterName = "FugaPrinter";                                
         }
         public string PrinterName { get; set; }
         public ObservableCollection<string> printers { get; set; }

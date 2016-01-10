@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using DeviceSetting.Model;
+using System.Windows.Data;
 
 namespace DeviceSetting.ViewModel
 {
@@ -24,6 +25,14 @@ namespace DeviceSetting.ViewModel
             get { return this.printers; }
         }
 
+        public string FullName
+        {
+            get
+            {
+                return printer.PrinterName;
+            }            
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged(string v)
         {            
@@ -33,4 +42,6 @@ namespace DeviceSetting.ViewModel
             }
         }
     }
+
+
 }

@@ -27,4 +27,27 @@ namespace DeviceSetting
             this.DataContext = p;
         }
     }
+
+    [ValueConversion(typeof(string), typeof(bool))]
+    public class HogeConverter : IValueConverter
+    {
+        public object Convert(object value, System.Type targetType,
+          object parameter, System.Globalization.CultureInfo culture)
+        {
+            if(value.ToString() == "HogePrinter")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }            
+        }
+
+        public object ConvertBack(object value, System.Type targetType,
+          object parameter, System.Globalization.CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
