@@ -16,7 +16,7 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <Label x:Name="label" Content="{Binding FullName}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="182,20,0,0"/>
+        <Label x:Name="label" Content="Printer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="182,20,0,0"/>
 
     </Grid>
 </Window>

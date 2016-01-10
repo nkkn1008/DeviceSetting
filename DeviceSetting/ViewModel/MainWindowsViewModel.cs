@@ -17,18 +17,7 @@ namespace DeviceSetting.ViewModel
         {
             this.printer = new Printer();
             this.printers = printer.printers;
-        }        
-        
-        public string FullName
-        {
-            get { return printer.PrinterName; }
-            set
-            {
-                printer.PrinterName = value;
-                NotifyPropertyChanged("FullName");
-            }
-        }
-
+        }               
 
         public ObservableCollection<string> PrinterList
         {
