@@ -19,7 +19,7 @@
 
         <Label x:Name="label" Content="Printer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24,25,0,0"/>
         <Label x:Name="label1" Content="Selected Printer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24,74,0,0"/>
-        <Label x:Name="label2" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="142,74,0,0"/>
+        <Label x:Name="label2" Content="{Binding SelectedValue, ElementName=comboBox}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="142,74,0,0"/>
 
     </Grid>
 </Window>
