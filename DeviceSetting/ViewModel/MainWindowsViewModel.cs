@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using DeviceSetting.Model;
+using System.Windows.Data;
 
 namespace DeviceSetting.ViewModel
 {
@@ -24,6 +25,17 @@ namespace DeviceSetting.ViewModel
             get { return this.printers; }
         }
 
+        bool _IsAvailable;
+        public bool IsAvailable
+        {
+            get { return _IsAvailable; }
+            set
+            {
+                _IsAvailable = value;
+                NotifyPropertyChanged("IsAvailable");
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged(string v)
         {            
@@ -33,4 +45,6 @@ namespace DeviceSetting.ViewModel
             }
         }
     }
+
+
 }
