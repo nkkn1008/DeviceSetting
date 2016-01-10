@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DeviceSetting"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="369">
     <Grid>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="240,20,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding PrinterList}">
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="142,25,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding PrinterList}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -16,7 +16,10 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <Label x:Name="label" Content="Printer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="182,20,0,0"/>
+
+        <Label x:Name="label" Content="Printer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24,25,0,0"/>
+        <Label x:Name="label1" Content="Selected Printer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24,74,0,0"/>
+        <Label x:Name="label2" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="142,74,0,0"/>
 
     </Grid>
 </Window>
