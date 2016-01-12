@@ -34,7 +34,11 @@ namespace DeviceSetting
         public object Convert(object value, System.Type targetType,
           object parameter, System.Globalization.CultureInfo culture)
         {
-            if(value.ToString() == "HogePrinter")
+            if (value == null)
+            {
+                return false;
+            }
+            if(value.ToString().StartsWith("Brother"))
             {
                 return true;
             }

@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 using DeviceSetting.Model;
 using System.Windows.Data;
+using System.Windows.Input;
+using System.Windows;
 
 namespace DeviceSetting.ViewModel
 {
@@ -18,6 +20,7 @@ namespace DeviceSetting.ViewModel
         {
             this.printer = new Printer();
             this.printers = printer.printers;
+            this.OkCommand = new OkCommandImpl();
         }               
 
         public ObservableCollection<string> PrinterList
@@ -33,6 +36,17 @@ namespace DeviceSetting.ViewModel
             }            
         }
 
+        private string _selectedPrinter;
+        public string SelectedPrinter
+        {
+            get { return _selectedPrinter; }
+            set
+            {
+                _selectedPrinter = value;
+                NotifyPropertyChanged("SelectedPrinter");
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged(string v)
         {            
@@ -41,7 +55,20 @@ namespace DeviceSetting.ViewModel
                 PropertyChanged(this, new PropertyChangedEventArgs(v));
             }
         }
+
+        class OkCommandImpl : ICommand
+        {
+            public bool CanExecute(object parameter) { return true; }
+            public event EventHandler CanExecuteChanged;
+
+            public void Execute(object parameter)
+            {
+                MessageBox.Show("コマンドが実行されました。");
+            }
+        }
+
+        public ICommand OkCommand { get; private set; }
+
     }
-
-
 }
+

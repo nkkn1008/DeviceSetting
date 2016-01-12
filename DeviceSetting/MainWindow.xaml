@@ -11,7 +11,13 @@
     </Window.Resources>
     
     <Grid>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="142,25,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding PrinterList}">
+        <ComboBox x:Name="comboBox" 
+                  HorizontalAlignment="Left" 
+                  Margin="142,25,0,0" 
+                  VerticalAlignment="Top" Width="120" 
+                  ItemsSource="{Binding PrinterList}"
+                  SelectedValue="{Binding Path=SelectedPrinter, Mode=TwoWay}"
+                  >
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -24,7 +30,7 @@
         <Label x:Name="label" Content="Printer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24,25,0,0"/>
         <Label x:Name="label1" Content="Selected Printer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24,74,0,0"/>
         <Label x:Name="label2" Content="{Binding SelectedValue, ElementName=comboBox}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="142,74,0,0"/>
-        <Button x:Name="button" Content="OK" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="220,275,0,0" IsEnabled="{Binding FullName, Converter={StaticResource hogeConverter}}"></Button>
+        <Button x:Name="button" Content="OK" Command="{Binding OkCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="220,275,0,0" IsEnabled="{Binding SelectedPrinter, Converter={StaticResource hogeConverter}}"></Button>
 
     </Grid>
 </Window>
